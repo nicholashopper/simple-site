@@ -1,0 +1,11 @@
+version: '2'
+services:
+ nginx:
+  build:
+   context: .
+  environment:
+      - VIRTUAL_HOST=${domain}
+  volumes:
+    - ./static:/usr/share/nginx/html
+  ports:
+    - "80:80"
